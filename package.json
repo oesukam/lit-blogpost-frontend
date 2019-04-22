@@ -1,0 +1,19 @@
+{
+  "name": "lit-blogpost-frontend",
+  "version": "1.0.0",
+  "description": "A frontend implemented using ReactJS",
+  "main": "src/index.js",
+  "author": "Olivier Esuka <oesukam@gmail.com> (https://oesukam.me)",
+  "license": "ISC",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oesukam/lit-blogpost-frontend.git"
+  },
+  "keywords": [
+    "blog",
+    "post"
+  ]
+}
