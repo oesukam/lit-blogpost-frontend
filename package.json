@@ -36,6 +36,7 @@
     "webpack-dev-server": "^3.3.1"
   },
   "dependencies": {
+    "bulma": "^0.7.4",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-hot-loader": "^4.8.4",
