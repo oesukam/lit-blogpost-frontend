@@ -1,5 +1,5 @@
 module.exports = {
   post: {
-    loading: true
-  }
+    loading: true,
+  },
 };
