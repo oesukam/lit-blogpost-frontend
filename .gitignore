@@ -20,3 +20,7 @@ package-lock.json
 
 # firebase
 .firebaserc
+
+# Test snapshots
+src/__tests__/components/__snapshots__
+
