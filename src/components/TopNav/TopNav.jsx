@@ -14,8 +14,29 @@ export class TopNav extends Component {
     this.setState({ url });
   }
 
-  render() {
+  renderAuthNav = () => {
     const { url } = this.state;
+    const { isAuth, user } = this.props;
+    if (isAuth) return <img className="user-avatar" src={user.image} alt="User avatar" />;
+    return (
+      <div className="buttons">
+        <Link
+          to="/auth/signup"
+          className={`button ${url === '/auth/signup' ? 'is-primary' : 'is-light'}`}
+        >
+          <strong>Sign up</strong>
+        </Link>
+        <Link
+          to="/auth/login"
+          className={`button ${url === '/auth/login' ? 'is-primary' : 'is-light'}`}
+        >
+          Log in
+        </Link>
+      </div>
+    );
+  };
+
+  render() {
     return (
       <nav className="navbar" role="navigation" aria-label="main navigation">
         <div className="container">
@@ -41,22 +62,7 @@ export class TopNav extends Component {
               </Link>
             </div>
             <div className="navbar-end">
-              <div className="navbar-item">
-                <div className="buttons">
-                  <Link
-                    to="/auth/signup"
-                    className={`button ${url === '/auth/signup' ? 'is-primary' : 'is-light'}`}
-                  >
-                    <strong>Sign up</strong>
-                  </Link>
-                  <Link
-                    to="/auth/login"
-                    className={`button ${url === '/auth/login' ? 'is-primary' : 'is-light'}`}
-                  >
-                    Log in
-                  </Link>
-                </div>
-              </div>
+              <div className="navbar-item">{this.renderAuthNav()}</div>
             </div>
           </div>
         </div>

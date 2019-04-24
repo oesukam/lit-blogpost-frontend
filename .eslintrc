@@ -5,8 +5,12 @@
   },
   "extends": "airbnb",
   "parser": "babel-eslint",
-  "plugins": ["jest"],
+  "plugins": ["jest", "react", "jsx-a11y"],
   "rules": {
+    "jsx-a11y/anchor-is-valid": [
+      "error",
+      { "components": ["Link"], "specialLink": ["onClick", "to"] }
+    ],
     "import/no-named-as-default": 0,
     "class-methods-use-this": 0,
     "react/forbid-prop-types": 0,
