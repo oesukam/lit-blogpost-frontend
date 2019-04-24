@@ -1,0 +1,1 @@
+export const SET_USER_LOGGING_IN = 'SET_USER_LOGGING_IN';

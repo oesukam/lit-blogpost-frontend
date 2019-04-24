@@ -1,10 +1,12 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { shallow } from 'enzyme';
 import App from '../../components/App';
+
+let wrapper;
 
 describe('App.jsx', () => {
   test('should render App.jx', () => {
-    const renderedValue = renderer.create(<App />).toJSON();
-    expect(renderedValue).toMatchSnapshot();
+    wrapper = shallow(<App />);
+    expect(wrapper).toMatchSnapshot();
   });
 });
