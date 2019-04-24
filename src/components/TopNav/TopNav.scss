@@ -1,0 +1,14 @@
+.navbar-start {
+  .navbar-item {
+    font-size: 1.3rem;
+    padding: 10px 20px;
+    &:hover {
+      color: #009e00;
+    }
+  }
+}
+.navbar-item {
+  &.active {
+    color: #009e00;
+  }
+}

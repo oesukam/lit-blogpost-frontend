@@ -1,0 +1,14 @@
+.main-content {
+  padding-top: 65px;
+  padding-bottom: 20px;
+  min-height: 100vh;
+}
+
+.button {
+  &.is-primary {
+    background-color: #009e00;
+    &:hover {
+      background-color: #009e00;
+    }
+  }
+}
