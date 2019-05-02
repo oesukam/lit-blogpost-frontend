@@ -1,3 +1,9 @@
+@import './Styles/styles';
+@import './Auth/Auth';
+
+#root {
+  min-height: 100vh;
+}
 .main-content {
   padding-top: 65px;
   padding-bottom: 20px;
