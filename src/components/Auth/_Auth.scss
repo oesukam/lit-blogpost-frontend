@@ -1,0 +1,54 @@
+.hero {
+  .hero-body {
+    background-color: #dbdbdb;
+  }
+}
+.notification {
+  padding: 0.4rem 1.25rem 0.4rem 0.5rem;
+}
+.auth-container {
+  position: relative;
+  background-color: #fff;
+  border-radius: 10px;
+  margin: 0 50px;
+  padding: 60px 4rem 4rem 4rem;
+  .error-container {
+    min-height: 37px;
+  }
+  .title {
+    text-align: center;
+    margin: 0.5rem 0rem 1rem;
+  }
+  .avatar {
+    width: 100px;
+    height: 100px;
+    right: 50%;
+    transform: translateX(50%);
+    position: absolute;
+    top: -50px;
+    background-color: $primary;
+    border-radius: 50%;
+    padding: 10px;
+  }
+  .field {
+    margin-top: 20px;
+  }
+  .input {
+    background-color: #c7c7c71a;
+    &:focus,
+    &:hover {
+      outline: none;
+      border: none;
+    }
+  }
+  .button {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .auth-container {
+    margin: 0 10px;
+  }
+}

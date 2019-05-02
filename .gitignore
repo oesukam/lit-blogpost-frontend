@@ -22,5 +22,4 @@ package-lock.json
 .firebaserc
 
 # Test snapshots
-src/__tests__/components/__snapshots__
-
+**/*/__snapshots__

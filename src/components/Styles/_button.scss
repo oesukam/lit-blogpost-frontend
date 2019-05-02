@@ -1,0 +1,14 @@
+.button {
+  &.primary {
+    background-color: $primary;
+    color: #fff;
+    border: none;
+    &:hover,
+    &:focus {
+      background-color: $dark;
+    }
+  }
+  &.fill {
+    width: 100%;
+  }
+}

@@ -1,0 +1,9 @@
+.is-primary {
+  color: $dark;
+}
+
+.hover-cursor {
+  &:hover {
+    cursor: pointer;
+  }
+}

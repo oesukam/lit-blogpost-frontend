@@ -25,6 +25,17 @@ describe('TopNav.jsx', () => {
     expect(component.state().url).toBe('');
   });
 
+  test('should render TopNav.jx with user avatar', () => {
+    const newProps = { ...props, isAuth: true };
+    wrapper = mount(
+      <Router>
+        <TopNav {...newProps} />
+      </Router>,
+    );
+    const component = wrapper.find('TopNav');
+    expect(component.props().isAuth).toBeTruthy();
+  });
+
   test('should call componentWillReceiveProps', () => {
     wrapper
       .find('TopNav')

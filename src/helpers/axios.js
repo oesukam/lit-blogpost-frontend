@@ -6,7 +6,7 @@ const {
 } = store.getState().user;
 
 const http = axios.create({
-  baseURL: process.env.API_URL || 'http://localhost:3000/api/v1',
+  baseURL: process.env.API_URL,
   headers: {
     Authorization: token || localStorage.getItem('token') || undefined,
   },
