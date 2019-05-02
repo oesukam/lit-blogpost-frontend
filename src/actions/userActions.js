@@ -26,8 +26,8 @@ export const setLoginFormError = payload => ({
   payload,
 });
 
-export const validateLoginInput = payload => dispatch => {
-  return new Promise(resolve => {
+export const validateLoginInput = payload => dispatch =>
+  new Promise(resolve => {
     const errors = {};
     let hasError = false;
     Object.keys(payload).forEach(key => {
@@ -43,7 +43,7 @@ export const validateLoginInput = payload => dispatch => {
     dispatch(setLoginFormError(errors));
     resolve(hasError);
   });
-};
+
 export const submitLogin = formData => dispatch => {
   dispatch(setLoggingIn(true));
   dispatch(setLoginError(''));

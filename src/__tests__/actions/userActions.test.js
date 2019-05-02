@@ -85,12 +85,16 @@ describe('userActions', () => {
           payload: false,
         },
       ];
-      moxios.stubRequest(`${BASE_URL}/auth/login`, {
-        status: 400,
-        response: {
-          message: 'FAILED',
+      moxios.stubRequest(
+        `${BASE_URL}/auth/login`,
+        {
+          status: 400,
+          response: {
+            message: 'FAILED',
+          },
         },
-      });
+        5,
+      );
       return store.dispatch(actions.submitLogin(payload)).then(() => {
         expect(store.getActions()).toEqual(expectedAction);
       });
@@ -119,14 +123,18 @@ describe('userActions', () => {
           payload: false,
         },
       ];
-      moxios.stubRequest(`${BASE_URL}/auth/login`, {
-        status: 200,
-        response: {
-          message: 'SUCCESS',
-          data: payload,
-          token: 'token',
+      moxios.stubRequest(
+        `${BASE_URL}/auth/login`,
+        {
+          status: 200,
+          response: {
+            message: 'SUCCESS',
+            data: payload,
+            token: 'token',
+          },
         },
-      });
+        5,
+      );
       return store.dispatch(actions.submitLogin(payload)).then(() => {
         expect(store.getActions()).toEqual(expectedAction);
       });
