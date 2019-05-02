@@ -8,6 +8,7 @@ import axios from '../../helpers/axios';
 const BASE_URL = process.env.API_URL;
 const mockStore = configureMockStore([thunk]);
 let store;
+jest.setTimeout(30000);
 
 describe('userActions', () => {
   describe('actions', () => {
