@@ -1,8 +1,11 @@
 const path = require('path');
 const webpack = require('webpack');
 const Dotenv = require('dotenv-webpack');
+const autoprefixer = require('autoprefixer');
+const HtmlWebPackPlugin = require('html-webpack-plugin');
 
 module.exports = {
+  devtool: 'inline-source-map',
   entry: './src/index.js',
   module: {
     rules: [
@@ -13,7 +16,7 @@ module.exports = {
       },
       {
         test: /\.(c|sc)ss$/,
-        use: ['style-loader', 'css-loader', 'sass-loader'],
+        use: ['style-loader', 'css-loader', 'sass-loader', 'postcss-loader'],
       },
       {
         test: /\.(png|jpg|jpeg|gif)$/,
@@ -45,7 +48,19 @@ module.exports = {
     publicPath: '/',
     filename: 'bundle.js',
   },
-  plugins: [new Dotenv(), new webpack.HotModuleReplacementPlugin()],
+  plugins: [
+    new HtmlWebPackPlugin({
+      template: './src/index.html',
+      filename: 'index.html',
+    }),
+    new Dotenv(),
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.LoaderOptionsPlugin({
+      options: {
+        postcss: [autoprefixer()],
+      },
+    }),
+  ],
   devServer: {
     contentBase: './dist',
     hot: true,
