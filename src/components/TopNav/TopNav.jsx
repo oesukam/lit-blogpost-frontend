@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import logo from '../../assets/images/green-leaves.png';
 import './TopNav.scss';
+import DefaultAvatar from '../../assets/svg/avatar.svg';
 
 export class TopNav extends Component {
   state = {
@@ -22,9 +23,8 @@ export class TopNav extends Component {
 
   renderAuthNav = () => {
     const { url } = this.state;
-    const { isAuth, user } = this.props;
-    if (isAuth)
-      return <img className="user-avatar" src={user.image} alt="User avatar" />;
+    const { isAuth } = this.props;
+    if (isAuth) return <DefaultAvatar className="user-avatar" />;
     return (
       <div className="buttons">
         <Link
@@ -81,13 +81,11 @@ export class TopNav extends Component {
 }
 
 TopNav.propTypes = {
-  user: PropTypes.object,
   isAuth: PropTypes.bool,
   match: PropTypes.object,
 };
 
 TopNav.defaultProps = {
-  user: {},
   isAuth: false,
   match: { url: '' },
 };
