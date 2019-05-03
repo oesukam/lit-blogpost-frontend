@@ -1,6 +1,5 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-import configureMockStore from 'redux-mock-store';
 import HomeSlideCard from '../../components/common/HomeSlideCard/HomeSlideCard';
 
 let wrapper;
