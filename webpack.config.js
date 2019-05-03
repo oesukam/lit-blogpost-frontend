@@ -1,54 +1,54 @@
-const path = require("path");
-const webpack = require("webpack");
-const Dotenv = require("dotenv-webpack");
+const path = require('path');
+const webpack = require('webpack');
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
-  entry: "./src/index.js",
+  entry: './src/index.js',
   module: {
     rules: [
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: ["babel-loader"]
+        use: ['babel-loader'],
       },
       {
         test: /\.(c|sc)ss$/,
-        use: ["style-loader", "css-loader", "sass-loader"]
+        use: ['style-loader', 'css-loader', 'sass-loader'],
       },
       {
         test: /\.(png|jpg|jpeg|gif)$/,
-        include: path.join(__dirname, "src", "assets"),
-        loader: "url-loader",
+        include: path.join(__dirname, 'src', 'assets'),
+        loader: 'url-loader',
         options: {
-          limit: 8192
-        }
+          limit: 8192,
+        },
       },
       {
         test: /\.svg$/,
         use: [
-          "babel-loader",
+          'babel-loader',
           {
-            loader: "react-svg-loader",
+            loader: 'react-svg-loader',
             options: {
-              jsx: true
-            }
-          }
-        ]
-      }
-    ]
+              jsx: true,
+            },
+          },
+        ],
+      },
+    ],
   },
   resolve: {
-    extensions: ["*", ".js", ".jsx"]
+    extensions: ['*', '.js', '.jsx'],
   },
   output: {
     path: `${__dirname}/dist`,
-    publicPath: "/",
-    filename: "bundle.js"
+    publicPath: '/',
+    filename: 'bundle.js',
   },
   plugins: [new Dotenv(), new webpack.HotModuleReplacementPlugin()],
   devServer: {
-    contentBase: "./dist",
+    contentBase: './dist',
     hot: true,
-    historyApiFallback: true
-  }
+    historyApiFallback: true,
+  },
 };

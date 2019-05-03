@@ -5,10 +5,12 @@ import { PropTypes } from 'prop-types';
 
 import Home from './Home/Home';
 import Login from './Auth/Login/Login';
+import SinglePost from './Post/SinglePost';
 
 export const Routes = ({ isAuth }) => (
   <Switch>
     <Route exact path="/" component={Home} />
+    <Route exact path="/posts/:postId" component={SinglePost} />
     <Route
       exact
       path="/login"
