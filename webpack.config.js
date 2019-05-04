@@ -65,5 +65,6 @@ module.exports = {
     contentBase: './dist',
     hot: true,
     historyApiFallback: true,
+    port: process.env.PORT || 3000
   },
 };
