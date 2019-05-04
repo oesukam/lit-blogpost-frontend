@@ -6,6 +6,7 @@ import { PropTypes } from 'prop-types';
 import Home from './Home/Home';
 import Login from './Auth/Login/Login';
 import SinglePost from './Post/SinglePost';
+import ErrorPage from './common/ErrorPage/ErrorPage';
 
 export const Routes = ({ isAuth }) => (
   <Switch>
@@ -16,6 +17,7 @@ export const Routes = ({ isAuth }) => (
       path="/login"
       render={props => (!isAuth ? <Login {...props} /> : <Redirect to="/" />)}
     />
+    <Route exact path="*" component={ErrorPage} />
   </Switch>
 );
 
