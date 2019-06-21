@@ -1,7 +1,14 @@
 module.exports = {
   post: {
-    loading: true,
+    loadingPosts: true,
+    loadingSinglePost: true,
+    singlePost: {},
     posts: [],
+    meta: {
+      page: 1,
+      pages: 1,
+      postsCount: 0,
+    },
   },
   user: {
     isAuth: localStorage.getItem('token') !== null,

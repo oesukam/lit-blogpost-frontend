@@ -60,4 +60,14 @@ describe('userReducer', () => {
       },
     });
   });
+
+  test(`should handle ${types.SET_USER_DATA}`, () => {
+    const action = {
+      type: types.SET_USER_DATA,
+      payload: {},
+    };
+    expect(reducer({}, action)).toEqual({
+      user: {},
+    });
+  });
 });

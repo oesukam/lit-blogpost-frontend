@@ -9,20 +9,32 @@ const props = {
   match: { url: '' },
 };
 describe('TopNav.jsx', () => {
+  beforeEach(() => {
+    wrapper = mount(
+      <Router>
+        <TopNav {...props} />
+      </Router>,
+    );
+  });
   test('should render TopNav.jx', () => {
     wrapper = shallow(<TopNav />);
     expect(wrapper).toMatchSnapshot();
   });
 
   test('should render TopNav.jx', () => {
-    wrapper = mount(
-      <Router>
-        <TopNav {...props} />
-      </Router>,
-    );
     const component = wrapper.find('TopNav');
     expect(component.props().match).toHaveProperty('url');
     expect(component.state().url).toBe('');
+  });
+
+  test('should render TopNav.jx for `/signup`', () => {
+    const component = wrapper.find('TopNav').setState({ url: '/signup' });
+    expect(component.state().url).toBe('/signup');
+  });
+
+  test('should render TopNav.jx for `/login`', () => {
+    const component = wrapper.find('TopNav').setState({ url: '/login' });
+    expect(component.state().url).toBe('/login');
   });
 
   test('should render TopNav.jx with user avatar', () => {
@@ -43,6 +55,21 @@ describe('TopNav.jsx', () => {
       .componentWillReceiveProps({ match: { url: '/auth/login' } });
     wrapper.update();
     expect(wrapper.find('TopNav').state().url).toBe('/auth/login');
+  });
+
+  describe('when clicking on `hamburger` button', () => {
+    beforeEach(() => {
+      wrapper = mount(
+        <Router>
+          <TopNav {...props} />
+        </Router>,
+      );
+    });
+    test('should toggle `hamburger` state', () => {
+      wrapper.find('button[data-el="hamburger"]').simulate('click');
+      const component = wrapper.find('TopNav');
+      expect(component.state().hamburger).toBeTruthy();
+    });
   });
 
   describe('when props changes', () => {

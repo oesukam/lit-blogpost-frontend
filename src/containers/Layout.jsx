@@ -2,20 +2,20 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import TopNav from '../components/TopNav/TopNav';
 
-const Layout = ({ childreen, match }) => (
+const Layout = ({ children, match }) => (
   <div>
     <TopNav match={match} />
-    <div className="main-content">{childreen}</div>
+    <div className="main-content">{children}</div>
   </div>
 );
 
 Layout.propTypes = {
-  childreen: PropTypes.any,
+  children: PropTypes.any,
   match: PropTypes.any,
 };
 
 Layout.defaultProps = {
-  childreen: '',
+  children: '',
   match: { params: {} },
 };
 

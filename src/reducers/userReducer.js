@@ -29,6 +29,11 @@ const userReducer = (state = initialState, { type, payload }) => {
         ...state,
         loginFormError: { ...state.loginFormError, ...payload },
       };
+    case types.SET_USER_DATA:
+      return {
+        ...state,
+        user: payload,
+      };
     default:
       return state;
   }

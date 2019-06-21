@@ -1,3 +1,11 @@
+#top-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+
 .navbar-start {
   .navbar-item {
     font-size: 1.3rem;
@@ -11,4 +19,9 @@
   &.active {
     color: #009e00;
   }
+}
+
+.user-avatar {
+  height: 35px;
+  width: 35px;
 }
